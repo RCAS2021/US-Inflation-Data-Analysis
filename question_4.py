@@ -1,11 +1,11 @@
 import pandas as pd
 
-# Lendo o arquivo
+# Reading csv file
 df = pd.read_csv('inflation_data.csv')
 
-# Filtrando dados
+# Filtering data
 filtered_data = df[['CUSR0000SA0', 'CUSR0000SETB01']]
 
-# Calculando a correlação
+# Calculating correlation
 correlation = filtered_data['CUSR0000SA0'].corr(filtered_data['CUSR0000SETB01'])
 print(f'Correlation between All items and Gasoline: {correlation}')

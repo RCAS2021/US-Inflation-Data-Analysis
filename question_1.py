@@ -50,15 +50,15 @@ series_ids = ['CUSR0000SA0', 'CUSR0000SA0L1E', 'CUSR0000SETB01']
 start_year = '2019'
 end_year = '2024'
 
-# Obter e processar os dados
+# Obtain and process data
 json_data = get_bls_data(series_ids, start_year, end_year)
 all_data = process_data(json_data)
 
-# Pivotar os dados para o formato desejado
+# Pivote data to correct format
 pivot_data = all_data.pivot(index='Date', columns='Series', values='Value').reset_index()
 
-# Salvar os dados em um arquivo CSV
+# Save data in CSV File
 pivot_data.to_csv('inflation_data.csv', index=False)
 
-# Mensagem de sucesso
-print("Script executado com sucesso! Os dados foram salvos em 'inflation_data.csv'.")
+# Success Message
+print("Script executed successfully! Data saved in 'inflation_data.csv'")
