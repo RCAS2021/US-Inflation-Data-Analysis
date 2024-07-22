@@ -54,7 +54,7 @@ end_year = '2024'
 json_data = get_bls_data(series_ids, start_year, end_year)
 all_data = process_data(json_data)
 
-# Pivote data to correct format
+# Pivot data to correct format
 pivot_data = all_data.pivot(index='Date', columns='Series', values='Value').reset_index()
 
 # Save data in CSV File
